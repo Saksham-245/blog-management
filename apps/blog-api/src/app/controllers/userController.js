@@ -7,7 +7,7 @@ const listBlogs = async (req, res) => {
         blogs: response
       })
     } else {
-      res.status(400).json({
+      res.status(200).json({
         message: 'No blogs found'
       })
     }

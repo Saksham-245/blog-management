@@ -1,12 +1,14 @@
-import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 import App from './app/app';
+import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from '@blog-management/shared-logic';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <StrictMode>
+  <AuthProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>
+  </AuthProvider>
 );

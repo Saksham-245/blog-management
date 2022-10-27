@@ -19,13 +19,11 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 
-console.log(process.env);
-
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to blog-api!' });
 });
 
-app.use('admin',adminRoute)
+app.use('/api/admin',adminRoute)
 app.use('/api/user',userRoute)
 
 const port = process.env.port || 3333;
